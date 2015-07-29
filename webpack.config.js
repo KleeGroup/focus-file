@@ -1,7 +1,12 @@
 var path = require('path');
 var webpack = require('webpack');
-
-module.exports = {
+var TARGET = process.env.TARGET || 'dev';
+var prod = {
+    devtool: 'source-map',
+    plugins : [new webpack.optimize.DedupePlugin()],
+    entry: ['./src/component/index']
+};
+var devConf = {
   devtool: 'eval',
   externals: {
         // require("jquery") is external and available
@@ -17,12 +22,12 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    filename: 'focus-file.js',
+    publicPath: '/dist/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -37,3 +42,7 @@ module.exports = {
     }]
   }
 };
+
+
+var prodConf = require('lodash').extend({}, devConf, prod);
+module.exports = TARGET === 'dev' ? devConf : prodConf;
