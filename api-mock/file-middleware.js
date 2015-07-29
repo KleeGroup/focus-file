@@ -1,4 +1,5 @@
 function fileMiddleWareConfig(config) {
+    config = config || {};
     var defaultDest = './uploads/';
 
     this.init = function init() {
