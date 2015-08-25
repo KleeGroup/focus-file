@@ -7,40 +7,36 @@ var prod = {
     entry: ['./src/component/index']
 };
 var devConf = {
-  devtool: 'eval',
-  externals: {
-        // require("jquery") is external and available
-        //  on the global var jQuery
-        "focus": "Focus",
-        "focus-components": "FocusComponents",
-        "dropzone": 'Dropzone'
+    devtool: 'eval',
+    externals: {
+        focus: 'Focus',
+        'focus-components': 'FocusComponents',
+        'dropzone': 'Dropzone'
     },
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index'
-  ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'focus-file.js',
-    publicPath: '/dist/'
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-  ],
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
-  module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loaders: ['react-hot', 'babel'],
-      include: path.join(__dirname, 'src')
-    }, {
-      test: /\.json$/, loader: "json"
-    }]
-  }
+    entry: [
+        'webpack-dev-server/client?http://localhost:3000',
+        'webpack/hot/only-dev-server',
+        './src/index'
+    ],
+    output: {
+        path: path.join(__dirname, 'dist'),
+        filename: 'focus-file.js',
+        publicPath: '/dist/'
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ],
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
+    module: {
+        loaders: [
+            {test: /\.jsx?$/, loaders: ['react-hot', 'babel'], include: path.join(__dirname, 'src')},
+            {test: /\.json$/, loader: 'json'},
+            {test: /\.css$/, loader: 'style!css'}
+        ]
+    }
 };
 
 
