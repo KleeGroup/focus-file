@@ -38,7 +38,7 @@ export default class FileUploadZone extends Component {
       let {fileId} = this;
       let {style} = this.props;
       return (
-          <div data-focus='file-upload'>
+          <div data-focus='file-upload' className='dropzone dz-clickable'>
                 <div data-file-upload={fileId} style={style}></div>
             </div>
       );

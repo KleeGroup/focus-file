@@ -15,6 +15,7 @@ export default class App extends Component {
           <div>
               <h1>file upload</h1>
               <FileUploadZone {...this.props}/>
+              <button className='mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored'><i className="material-icons">add</i></button>
           </div>
       );
   }
