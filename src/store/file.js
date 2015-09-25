@@ -1,6 +1,6 @@
 //Dependencies.
-import {store} from 'focus';
-const CoreStore = store;
+import {store} from 'focus-core';
+const {CoreStore} = store;
 
 const definition = {
     files: 'files'
@@ -10,7 +10,9 @@ const definition = {
 * Class standing for the account relative data store.
 */
 class FileStore extends CoreStore {
-    constructor(conf = {definition}){
+    constructor(conf) {
+        conf = conf || {};
+        conf.definition = conf.definition || definition;
         super(conf);
     }
 }
