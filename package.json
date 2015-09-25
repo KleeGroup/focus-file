@@ -34,6 +34,7 @@
     "eslint-config-focus": "^0.2.0",
     "json-loader": "^0.5.2",
     "react-hot-loader": "^1.2.7",
+    "sass-loader": "^2.0.1",
     "style-loader": "^0.12.3",
     "webpack": "^1.9.6",
     "webpack-dev-server": "^1.8.2"
