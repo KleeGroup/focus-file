@@ -8,15 +8,10 @@ var prod = {
 };
 var devConf = {
     devtool: 'eval',
-    externals: {
-        focus: 'Focus',
-        'focus-components': 'FocusComponents',
-        'dropzone': 'Dropzone'
-    },
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
-        './src/index'
+        './src/example/index'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -34,7 +29,8 @@ var devConf = {
         loaders: [
             {test: /\.jsx?$/, loaders: ['react-hot', 'babel'], include: path.join(__dirname, 'src')},
             {test: /\.json$/, loader: 'json'},
-            {test: /\.css$/, loader: 'style!css'}
+            {test: /\.css$/, loader: 'style!css'},
+            {test: /\.scss$/, loader: 'style!css!sass'}
         ]
     }
 };
