@@ -27,18 +27,23 @@ class FileUploadZone extends Component {
         this.state = state;
     }
 
-    /** @inheritdoc */
+    /**
+     * Component did mount
+     */
     componentDidMount(){
         const {fileId} = this.state;
-        const {template} = this.props;
+        // const {template} = this.props;
         this.dropzone = new Dropzone(`div[data-file-upload='${fileId}']`, this.props);
     }
-    /** @inheritdoc */
+    /**
+     * Render the component
+     * @return {JSX} The rendered component
+     */
     render() {
         const {style} = this.props;
         const {fileId} = this.state;
         return (
-            <div data-focus='file-upload' className='dropzone dz-clickable'>
+            <div className='dropzone dz-clickable' data-focus='file-upload'>
                 <div data-file-upload={fileId} style={style}></div>
             </div>
         );
