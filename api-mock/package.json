@@ -13,5 +13,8 @@
     "express": "^4.13.1",
     "lodash": "^3.10.0",
     "multer": "^0.1.8"
+  },
+  "devDependencies": {
+    "cors": "^2.7.1"
   }
 }
