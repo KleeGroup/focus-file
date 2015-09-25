@@ -40,11 +40,10 @@
   },
   "dependencies": {
     "dropzone": "^4.0.1",
-    "focusjs": "^0.7.0",
-    "focusjs-components": "^0.3.0",
+    "focus-core": "0.11.0-beta4",
     "lodash": "^3.10.0",
     "material-design-lite": "^1.0.4-2",
-    "react": "^0.13.0",
+    "react": "0.14.0-rc1",
     "uuid": "^2.0.1",
     "babel-eslint": "4.0.5",
     "eslint": "0.24.1",
