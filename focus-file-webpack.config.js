@@ -10,7 +10,12 @@ module.exports = {
         libraryTarget: 'var',
         library: 'FocusFile'
     },
-    loaders: [],
+    loaders: [
+        {
+            test: /\.css$/,
+            loader: 'style!css'
+        }
+    ],
     plugins: [],
     directory: path.join(__dirname, 'src'),
     port: 3000
