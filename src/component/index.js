@@ -1,6 +1,6 @@
 //Dependencies
 import React, {Component, PropTypes} from 'react';
-import Dropzone from 'dropzone';
+import 'dropzone/dist/dropzone';
 import 'dropzone/dist/dropzone.css';
 import './style/index.scss';
 import builtInStore from '../store/built-in-store';
@@ -20,9 +20,6 @@ const propTypes = {
 const defaultProps = {
     paramName: 'upfile',
     removalTimeout: 1500,
-    headers: {
-        'Cache-Control': null
-    },
     store: builtInStore
 };
 
@@ -42,7 +39,7 @@ class FileUploadZone extends Component {
     /**
     * Component did mount
     */
-    componentDidMount(){
+    componentDidMount() {
         const {fileId} = this.state;
         this.dropzone = new Dropzone(`div[data-file-upload='${fileId}']`, this.props);
         this.dropzone.on('complete', this._onFileComplete);
