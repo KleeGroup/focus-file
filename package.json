@@ -1,7 +1,7 @@
 {
   "name": "focus-file",
   "version": "0.1.2",
-  "description": "Focus js file add on.",
+  "description": "Focus file add on.",
   "scripts": {
     "start": "node server.js",
     "build": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.prod.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gaearon/react-hot-boilerplate.git"
+    "url": "https://github.com/KleeGroup/focus-file"
   },
   "keywords": [
     "react",
@@ -22,12 +22,11 @@
     "edit",
     "webpack"
   ],
-  "author": "Pierre Besson <pierre.besson7@gmail.com> (http://github.com/pierr)",
+  "author": "focus@kleegroup.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pierr/account/issues"
+    "url": "https://github.com/KleeGroup/focus-file/issues"
   },
-  "homepage": "https://github.com/pierr/account",
   "devDependencies": {
     "babel": "^5.8.23",
     "babel-core": "^5.4.7",

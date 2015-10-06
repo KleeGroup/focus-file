@@ -1,32 +1,39 @@
-Account
+Focus file
 =====================
 
-The minimal dev environment to enable live-editing React components.
+Focus file addon. Uses [DropzoneJS](http://www.dropzonejs.com/).
 
 ### Usage
 
+In your project, do the following :
 ```
-npm install
-npm start
-open http://localhost:3000
-```
-
-
-### Linting
-
-This boilerplate project includes React-friendly ESLint configuration.
-
-```
-npm run lint
+npm i -D focus-file@latest
 ```
 
-### Using `0.0.0.0` as Host
+If your running on brunchJs, don't forget to copy the downloaded script to your `vendor` folder.
 
-You may want to change the host in `server.js` and `webpack.config.js` from `localhost` to `0.0.0.0` to allow access from same WiFi network. This is not enabled by default because it is reported to cause problems on Windows. This may also be useful if you're using a VM.
+Once correctly added, the component will be available on the `window` as `FocusFile`.
+
+### Example
+
+```jsx
+<FocusFile url='your/url'/>
+```
+
+### Advanced usage
+
+The component uses internally a `store`, fed with all the files dropped in the file upload, whatever the upload status was.
+
+You can access this store with `refToYourFocusFileComponent.props.store`.
+
+### Adding DropzoneJS events
+
+If you want to catch [DropzoneJS events](http://www.dropzonejs.com/#events), you can access the Dropzone object through `refToYourFocusFileComponent.dropzone`.
+
 ### Dependencies
 
-* React
-* Webpack
-* [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
-* [babel-loader](https://github.com/babel/babel-loader)
-* [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+* [DropzoneJS](http://www.dropzonejs.com)
+* [Material design lite](http://www.getmdl.io/)
+* [Focus core](https://github.com/KleeGroup/focus-core)
+* [Lodash](https://lodash.com)
+* [ReactJS](https://facebook.github.io/react/)
