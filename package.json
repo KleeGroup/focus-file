@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "dropzone": "^4.0.1",
-    "focus-core": "0.11.0-beta4",
+    "focus-core": "0.12.0",
     "lodash": "^3.10.0",
     "material-design-lite": "^1.0.4-2",
     "react": "0.14.0-rc1",
