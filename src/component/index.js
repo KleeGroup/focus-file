@@ -15,7 +15,7 @@ const propTypes = {
     previewTemplate: PropTypes.string,
     removalTimeout: PropTypes.number,
     store: PropTypes.object,
-    onFileUploadSuccess: PropTypes.func,
+    onFileSuccess: PropTypes.func,
     onFileComplete: PropTypes.func
 };
 
