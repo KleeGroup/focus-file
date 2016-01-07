@@ -14,7 +14,9 @@ const propTypes = {
     paramName: PropTypes.string,
     previewTemplate: PropTypes.string,
     removalTimeout: PropTypes.number,
-    store: PropTypes.object
+    store: PropTypes.object,
+    onFileUploadSuccess: PropTypes.func,
+    onFileComplete: PropTypes.func
 };
 
 const defaultProps = {
@@ -43,6 +45,7 @@ class FileUploadZone extends Component {
         const {fileId} = this.state;
         this.dropzone = new Dropzone(`div[data-file-upload='${fileId}']`, this.props);
         this.dropzone.on('complete', this._onFileComplete);
+        this.dropzone.on('success', this._onFileSuccess);
     }
 
     _onFileComplete = file => {
@@ -56,6 +59,15 @@ class FileUploadZone extends Component {
             data: {files},
             type: 'update'
         });
+        if(this.props.onFileComplete) {
+            this.props.onFileComplete(file);
+        }
+    }
+
+    _onFileSuccess = (file, response) => {
+        if(this.props.onFileSuccess) {
+            this.props.onFileSuccess(file, response);
+        }
     }
 
     /**
@@ -65,8 +77,12 @@ class FileUploadZone extends Component {
     render() {
         const {fileId} = this.state;
         return (
-            <div className='dropzone dz-clickable' data-focus='file-upload'>
-                <div data-file-upload={fileId} data-focus='file-upload-dropzone'></div>
+            <div data-focus='file-upload'>
+                <div className='dropzone dz-clickable' data-file-upload={fileId} data-focus='file-upload-dropzone'>
+                    <div className='dz-message needsclick'>
+                        {this.props.children}
+                    </div>
+                </div>
             </div>
         );
     }
