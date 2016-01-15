@@ -11,5 +11,8 @@
         &.dz-drag-hover {
             background-color: #EEE;
         }
+        &.dz-started .dz-message {
+            display: none;
+        }
     }
 }
