@@ -1,7 +1,6 @@
 //Dependencies
 import React, {Component, PropTypes} from 'react';
 import 'dropzone/dist/dropzone';
-import 'dropzone/dist/dropzone.css';
 import './style/index.scss';
 import builtInStore from '../store/built-in-store';
 import uuid from 'uuid';
