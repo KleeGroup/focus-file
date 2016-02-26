@@ -3,6 +3,13 @@
   "version": "0.3.0-beta1",
   "description": "Focus file add on.",
   "main": "index.js",
+  "files": [
+    "component",
+    "example",
+    "index.js",
+    "store",
+    "dist"
+  ],
   "scripts": {
     "build": "npm run babelify && npm run copy-sass && npm run bundle",
     "bundle": "better-npm-run bundle",
