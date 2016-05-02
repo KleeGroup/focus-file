@@ -2,18 +2,17 @@ sudo: false
 language: node_js
 node_js:
 - '6.0'
-before_deploy: 'npm run build'
-deploy:
-  provider: npm
-  email: pierre.besson7+npm@gmail.com
-  api_key:
-    secure: hUSwbyOa1f2COJbiH0CzvywG/SkS+jlB9RoMeLiwalG0BKWddq1AAVkAyXX59Qrnuo1mf+H+9svH4nJEUbTOOHksRpGrNn3xX8759GW43KNBEBsA0Z0swLl4bFeT3cQUmI0nSCSrf2qbwxJOQLknSHx3FwrmLGfOSApgYCV3U+A=
-  skip_cleanup: true
-  on:
-    branch: master
+before_deploy: npm run build
 branches:
   only:
   - master
 cache:
   directories:
   - node_modules
+deploy:
+  provider: npm
+  email: pierre.besson7+npm@gmail.com
+  api_key:
+    secure: i2jNf3tXv+jZvZzqvtWwDJkVknd677otrZXlYDkWvwQ72h7n85c+Km98I8ZzG4uxyeiOBQ2RY5Dzn4Gr3IrbpBr1MniuYIjERnHwMad2vwfpGmSGQw0U+XzthMZKrDvP2WQMEem/P7KwzAZ31EMvm1FL2hE10ErX5+CI3sv6dacGVVp/SwugFPaw5gJnnQxKfJVSIbVTr8cMbT04NzLcNJPKgfsq2wsIrgYVY/LX3lf4PxVHLxP68zcwSRILlEuQnmR5gWSHVyCKdkKuBE/F/w0I2xIbfsrGEgh3W+gxYP1upoVN7n58MDNZzXOTHRfXOrXfucF9mkwiETjuuALC4cYBWtE6JTEyWYzDlVvkm5ggwJYLCRwR8Llm5DwgIA17tgurK3gUaZJ092kcsFdAgnqrfvZneF8sHG4MDepiT6hHytzrTS9JxltpOKmJc7i2aOwIwoMu2Sme4PaOxSEpkpifRYNkV8YOcEjC30wFodUMUHUwQ+zEQhUNepORXhNRmo9a/ksewFRCVhuzM/1MwwMtUL1WQd2D8Q0hAtxI+3nWiGic2ZM2WCollzUpnVYS2UMbw/pLyS2DkujmrhwIsxNNfxHqRbYq0t+BHgjOqE+6PXVV73fG+gGRkdjhZfB7YX/QYK2zHmh1qIHgRICsSxZkiud/raLHzdTgISppBNY=
+  on:
+    repo: KleeGroup/focus-file
