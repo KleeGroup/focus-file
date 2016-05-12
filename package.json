@@ -35,6 +35,7 @@
       "command": "cd src && find . -name *.scss | xargs tar cvf - | tar xfp - -C ../"
     },
     "babelify": {
+      "BABEL_ENV": "production",
       "command": "node scripts/babelify.js"
     },
     "dev-server": {
