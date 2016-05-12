@@ -17,7 +17,6 @@
     "babelify": "better-npm-run babelify",
     "prepublish": "npm run build",
     "start": "better-npm-run dev-server",
-    "test": "better-npm-run test",
     "lint": "eslint src"
   },
   "betterScripts": {
