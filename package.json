@@ -1,6 +1,6 @@
 {
   "name": "focus-file",
-  "version": "0.5.0",
+  "version": "0.5.0-beta1",
   "description": "Focus file add on.",
   "main": "index.js",
   "files": [
@@ -27,7 +27,8 @@
         "NODE_ENV": "production",
         "LIBRARY_NAME": "FocusFile",
         "MINIMIFY": false,
-        "PACKAGE_JSON_PATH": "../"
+        "PACKAGE_JSON_PATH": "../",
+        "BABEL_ENV": "production"
       }
     },
     "copy-sass": {
