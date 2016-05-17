@@ -1,6 +1,0 @@
-api-mock/
-node_modules/
-.eslintrc
-.babelrc
-index.html
-server.js
