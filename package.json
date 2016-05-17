@@ -25,6 +25,7 @@
       "env": {
         "DEV": false,
         "NODE_ENV": "production",
+        "BABEL_ENV": "production",
         "LIBRARY_NAME": "FocusFile",
         "MINIMIFY": false,
         "PACKAGE_JSON_PATH": "../"
