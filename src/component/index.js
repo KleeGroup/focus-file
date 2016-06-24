@@ -46,6 +46,16 @@ class FileUploadZone extends Component {
         this.dropzone.on('complete', this._onFileComplete);
         this.dropzone.on('success', this._onFileSuccess);
     }
+    
+    /**
+    * Component will receive props
+    */
+    componentWillReceiveProps(newProps) {
+        if(newProps.url){
+            this.dropzone.options.url = newProps.url;             
+        }
+    };
+
 
     _onFileComplete = file => {
         const {removalTimeout, store} = this.props;
