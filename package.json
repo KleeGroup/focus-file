@@ -1,6 +1,6 @@
 {
   "name": "focus-file",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "Focus file add on.",
   "main": "index.js",
   "files": [
@@ -89,6 +89,7 @@
     "babel-preset-focus": "^0.5.2",
     "babel-runtime": "^6.0.14",
     "body-parser": "^1.14.1",
+    "better-npm-run": "0.0.9",
     "chai": "^3.3.0",
     "chai-subset": "^1.1.0",
     "css-loader": "^0.16.0",
