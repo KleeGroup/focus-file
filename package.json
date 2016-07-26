@@ -1,6 +1,6 @@
 {
   "name": "focus-file",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "Focus file add on.",
   "main": "index.js",
   "files": [
