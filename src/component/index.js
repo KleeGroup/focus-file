@@ -1,10 +1,10 @@
 //Dependencies
 import React, {Component, PropTypes} from 'react';
-import 'dropzone/dist/dropzone';
 import './style/index.scss';
 import builtInStore from '../store/built-in-store';
 import uuid from 'uuid';
 import {dispatcher} from 'focus-core';
+import DropzoneFocus from 'dropzone';
 
 const propTypes = {
     withCredentials: PropTypes.bool,
@@ -42,7 +42,7 @@ class FileUploadZone extends Component {
     */
     componentDidMount() {
         const {fileId} = this.state;
-        this.dropzone = new Dropzone(`div[data-file-upload='${fileId}']`, this.props);
+        this.dropzone = new DropzoneFocus(`div[data-file-upload='${fileId}']`, this.props);
         this.dropzone.on('complete', this._onFileComplete);
         this.dropzone.on('success', this._onFileSuccess);
     }
@@ -51,10 +51,10 @@ class FileUploadZone extends Component {
     * Component will receive props
     */
     componentWillReceiveProps(newProps) {
-        if(newProps.url){
+        if (newProps.url) {
             this.dropzone.options.url = newProps.url;             
         }
-    };
+    }
 
 
     _onFileComplete = file => {
@@ -68,7 +68,7 @@ class FileUploadZone extends Component {
             data: {files},
             type: 'update'
         });
-        if(this.props.onFileComplete) {
+        if (this.props.onFileComplete) {
             this.props.onFileComplete(file);
         }
     }
@@ -87,7 +87,7 @@ class FileUploadZone extends Component {
         const {fileId} = this.state;
         return (
             <div data-focus='file-upload'>
-                <div className='dropzone dz-clickable' data-file-upload={fileId} data-focus='file-upload-dropzone'>
+                <div className='dz-clickable' data-file-upload={fileId} data-focus='file-upload-dropzone'>
                     <div className='dz-message needsclick'>
                         {this.props.children}
                     </div>
