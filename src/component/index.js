@@ -12,6 +12,7 @@ const propTypes = {
     url: PropTypes.string,
     paramName: PropTypes.string,
     previewTemplate: PropTypes.string,
+    dispatcher: PropTypes.object,
     removalTimeout: PropTypes.number,
     store: PropTypes.object,
     onFileSuccess: PropTypes.func,
@@ -20,6 +21,7 @@ const propTypes = {
 
 const defaultProps = {
     paramName: 'upfile',
+    dispatcher: dispatcher,
     removalTimeout: 1500,
     store: builtInStore
 };
@@ -58,7 +60,7 @@ class FileUploadZone extends Component {
 
 
     _onFileComplete = file => {
-        const {removalTimeout, store} = this.props;
+        const {removalTimeout, store, dispatcher} = this.props;
         setTimeout(() => {
             this.dropzone.removeFile(file);
         }, removalTimeout);
