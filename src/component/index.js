@@ -54,6 +54,10 @@ class FileUploadZone extends Component {
         if (newProps.url) {
             this.dropzone.options.url = newProps.url;             
         }
+        if (newProps.headers) {
+            this.dropzone.options.headers = newProps.headers;             
+        }
+
     }
 
 
