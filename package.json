@@ -98,7 +98,7 @@
     "react-addons-test-utils": "0.14.4",
     "react-dom": "^0.14.7",
     "sinon": "^1.17.1",
-    "sinon-chai": "^2.8.0",
+    "sinon-chai": "^2.8.0"
   },
   "dependencies": {
     "better-npm-run": "0.0.8",
