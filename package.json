@@ -11,8 +11,7 @@
     "dist"
     ],
   "scripts": {
-    "build": "npm run babelify && npm run copy-sass && npm run bundle",
-    "bundle": "better-npm-run bundle",
+    "build": "npm run babelify && npm run copy-sass",
     "copy-sass": "better-npm-run copy-sass",
     "babelify": "better-npm-run babelify",
     "prepublish": "npm run build",
@@ -20,17 +19,6 @@
     "lint": "eslint src"
   },
   "betterScripts": {
-    "bundle": {
-      "command": "webpack --progress",
-      "env": {
-        "DEV": false,
-        "NODE_ENV": "production",
-        "BABEL_ENV": "production",
-        "LIBRARY_NAME": "FocusFile",
-        "MINIMIFY": false,
-        "PACKAGE_JSON_PATH": "../"
-      }
-    },
     "copy-sass": {
       "command": "cd src && find . -name *.scss | xargs tar cvf - | tar xfp - -C ../"
     },
@@ -81,55 +69,38 @@
   },
   "devDependencies": {
     "animate.css": "^3.4.0",
-    "babel": "^6.0.15",
     "babel-cli": "^6.4.0",
     "babel-core": "^6.1.2",
     "babel-eslint": "^4.1.4",
-    "babel-loader": "^6.1.0",
     "babel-preset-focus": "^0.5.2",
     "babel-runtime": "^6.0.14",
     "body-parser": "^1.14.1",
     "better-npm-run": "0.0.9",
     "chai": "^3.3.0",
     "chai-subset": "^1.1.0",
-    "css-loader": "^0.16.0",
     "eslint": "1.5.1",
     "eslint-config-focus": "^0.3.0",
     "eslint-plugin-filenames": "0.1.1",
     "eslint-plugin-react": "3.5.0",
     "express": "^4.13.3",
-    "extract-text-webpack-plugin": "^0.8.2",
     "faker": "^3.0.1",
-    "file-loader": "^0.8.4",
     "focus-core": "0.11.0-beta4",
     "font-awesome": "^4.4.0",
-    "html-webpack-plugin": "^1.6.2",
     "jsdom": "^6.5.1",
-    "json-loader": "^0.5.2",
     "lodash": "^3.10.0",
     "material-design-icons-iconfont": "^2.0.4",
     "material-design-lite": "^1.0.4-2",
     "mocha": "^2.3.0",
     "moment": "^2.10.6",
     "nock": "^2.17.0",
-    "node-sass": "^3.3.3",
     "react": "^0.14.7",
     "react-addons-css-transition-group": "0.14.4",
     "react-addons-test-utils": "0.14.4",
     "react-dom": "^0.14.7",
-    "react-hot-loader": "^1.2.7",
-    "sass-loader": "^3.0.0",
     "sinon": "^1.17.1",
     "sinon-chai": "^2.8.0",
-    "source-map-loader": "^0.1.5",
-    "style-loader": "^0.12.3",
-    "url-loader": "^0.5.6",
-    "webpack": "^1.9.6",
-    "webpack-dev-server": "^1.8.2",
-    "webpack-focus": "^0.11.5"
   },
   "dependencies": {
-    "autoprefixer-loader": "^3.2.0",
     "better-npm-run": "0.0.8",
     "dropzone": "^4.0.1",
     "uuid": "^2.0.1"
