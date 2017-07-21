@@ -1,6 +1,13 @@
 Focus file
 =====================
 
+[![master](https://travis-ci.org/KleeGroup/focus-files.svg?branch=master)](https://travis-ci.org/KleeGroup/focus-files)
+[![develop](https://travis-ci.org/KleeGroup/focus-files.svg?branch=develop)](https://travis-ci.org/KleeGroup/focus-files)
+
+[![Dependencies Status](https://david-dm.org/KleeGroup/focus-files.svg)](https://david-dm.org/KleeGroup/focus-files)
+[![Dev Dependencies Status](https://david-dm.org/KleeGroup/focus-files/dev-status.svg)](https://david-dm.org/KleeGroup/focus-files?type=dev)
+[![Peer Dependencies Status](https://david-dm.org/KleeGroup/focus-files/peer-status.svg)](https://david-dm.org/KleeGroup/focus-files?type=peer)
+
 Focus file addon. Uses [DropzoneJS](http://www.dropzonejs.com/).
 
 ### Usage
