@@ -1,10 +1,10 @@
 //Dependencies
 import React, { Component, PropTypes } from 'react';
-import './style/index.scss';
 import builtInStore from '../store/built-in-store';
-import uuid from 'uuid';
+import { v4 as uuid } from 'uuid';
 import { dispatcher } from 'focus-core';
 import DropzoneFocus from 'dropzone';
+import './style/index.scss';
 
 const propTypes = {
     withCredentials: PropTypes.bool,
@@ -30,11 +30,10 @@ const defaultProps = {
 class FileUploadZone extends Component {
     constructor(props) {
         super(props);
-        const state = {
+        this.state = {
             dragging: false,
-            fileId: uuid.v4()
+            fileId: uuid()
         };
-        this.state = state;
     }
 
     /**
