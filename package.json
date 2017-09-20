@@ -1,108 +1,70 @@
 {
-  "name": "focus-file",
-  "version": "0.7.3",
-  "description": "Focus file add on.",
-  "main": "index.js",
-  "files": [
-    "component",
-    "example",
-    "index.js",
-    "store",
-    "dist"
+    "name": "focus-file",
+    "version": "0.7.4-beta1",
+    "description": "Focus file add on.",
+    "main": "index.js",
+    "files": [
+        "component",
+        "example",
+        "index.js",
+        "store",
+        "dist"
     ],
-  "scripts": {
-    "build": "npm run babelify && npm run copy-sass",
-    "copy-sass": "better-npm-run copy-sass",
-    "babelify": "better-npm-run babelify",
-    "prepublish": "npm run build",
-    "start": "better-npm-run dev-server",
-    "lint": "eslint src"
-  },
-  "betterScripts": {
-    "copy-sass": {
-      "command": "cd src && find . -name *.scss | xargs tar cvf - | tar xfp - -C ../"
+    "scripts": {
+        "build": "better-npm-run babelify",
+        "prepublishOnly": "npm run build",
+        "fix-lint": "eslint src/** --ext .js,.jsx --fix --ignore-pattern __tests__ --ignore-pattern example"
     },
-    "babelify": {
-      "env": {
-        "BABEL_ENV": "production"
-      },
-      "command": "node scripts/babelify.js"
+    "betterScripts": {
+        "babelify": {
+            "command": "babel src/ --out-dir .",
+            "env": {
+                "BABEL_ENV": "production",
+                "LEGACY_EXPORTS": "true"
+            }
+        }
     },
-    "dev-server": {
-      "command": "node ./server.js",
-      "env": {
-        "DEV": true,
-        "SOURCE_MAP": false,
-        "ENTRY_FILE_PATH": "./src/example/index",
-        "PAGE_TITLE": "Focus notifications dev page",
-        "MINIMIFY": false,
-        "API_PORT": 9999,
-        "PACKAGE_JSON_PATH": "../",
-        "ANCHOR_CLASS": "notification-center-example"
-      }
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/KleeGroup/focus-file"
+    },
+    "keywords": [
+        "react",
+        "reactjs",
+        "boilerplate",
+        "hot",
+        "reload",
+        "hmr",
+        "live",
+        "edit",
+        "webpack"
+    ],
+    "babel": {
+        "presets": [
+            "focus"
+        ]
+    },
+    "author": "focus@kleegroup.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/KleeGroup/focus-file/issues"
+    },
+    "peerDependencies": {
+        "focus-core": "2.2.0-beta3",
+        "react": "15.4.2",
+        "react-dom": "15.4.2"
+    },
+    "devDependencies": {
+        "babel-cli": "6.26.0",
+        "babel-preset-focus": "1.0.0-beta1",
+        "better-npm-run": "0.1.0",
+        "eslint-config-focus": "0.6.0",
+        "focus-core": "2.2.0-beta3",
+        "react": "15.4.2",
+        "react-dom": "15.4.2"
+    },
+    "dependencies": {
+        "dropzone": "4.3.0",
+        "uuid": "3.1.0"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/KleeGroup/focus-file"
-  },
-  "keywords": [
-    "react",
-    "reactjs",
-    "boilerplate",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
-    "webpack"
-  ],
-  "babel": {
-    "presets": [
-      "focus"
-    ]
-  },
-  "author": "focus@kleegroup.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/KleeGroup/focus-file/issues"
-  },
-  "devDependencies": {
-    "animate.css": "^3.4.0",
-    "babel-cli": "^6.4.0",
-    "babel-core": "^6.1.2",
-    "babel-eslint": "^4.1.4",
-    "babel-preset-focus": "^0.5.2",
-    "babel-runtime": "^6.0.14",
-    "body-parser": "^1.14.1",
-    "better-npm-run": "0.0.9",
-    "chai": "^3.3.0",
-    "chai-subset": "^1.1.0",
-    "eslint": "1.5.1",
-    "eslint-config-focus": "^0.3.0",
-    "eslint-plugin-filenames": "0.1.1",
-    "eslint-plugin-react": "3.5.0",
-    "express": "^4.13.3",
-    "faker": "^3.0.1",
-    "focus-core": "0.11.0-beta4",
-    "font-awesome": "^4.4.0",
-    "jsdom": "^6.5.1",
-    "lodash": "^3.10.0",
-    "material-design-icons-iconfont": "^2.0.4",
-    "material-design-lite": "^1.0.4-2",
-    "mocha": "^2.3.0",
-    "moment": "^2.10.6",
-    "nock": "^2.17.0",
-    "react": "^0.14.7",
-    "react-addons-css-transition-group": "0.14.4",
-    "react-addons-test-utils": "0.14.4",
-    "react-dom": "^0.14.7",
-    "sinon": "^1.17.1",
-    "sinon-chai": "^2.8.0"
-  },
-  "dependencies": {
-    "better-npm-run": "0.0.8",
-    "dropzone": "^4.0.1",
-    "uuid": "^2.0.1"
-  }
 }

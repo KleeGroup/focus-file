@@ -1,6 +1,6 @@
 //Dependencies.
-import {store} from 'focus-core';
-const {CoreStore} = store;
+import { store } from 'focus-core';
+const { CoreStore } = store;
 
 const definition = {
     files: 'files'

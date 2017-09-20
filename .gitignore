@@ -3,6 +3,6 @@ npm-debug.log
 .DS_Store
 dist
 component
-example
 store
 index.js
+.history

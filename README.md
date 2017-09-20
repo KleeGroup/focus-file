@@ -40,7 +40,5 @@ If you want to catch [DropzoneJS events](http://www.dropzonejs.com/#events), you
 ### Dependencies
 
 * [DropzoneJS](http://www.dropzonejs.com)
-* [Material design lite](http://www.getmdl.io/)
 * [Focus core](https://github.com/KleeGroup/focus-core)
-* [Lodash](https://lodash.com)
 * [ReactJS](https://facebook.github.io/react/)
