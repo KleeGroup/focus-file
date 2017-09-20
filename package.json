@@ -17,7 +17,7 @@
     },
     "betterScripts": {
         "babelify": {
-            "command": "babel src/ --out-dir .",
+            "command": "babel src/ --out-dir . && (test -d \"component/style/\" || mkdir \"component/style/\") &&  cp -r ./src/component/style/index.scss ./component/style/index.scss",
             "env": {
                 "BABEL_ENV": "production",
                 "LEGACY_EXPORTS": "true"
