@@ -1,10 +1,10 @@
 //Dependencies
-import React, {Component, PropTypes} from 'react';
-import './style/index.scss';
+import React, { Component, PropTypes } from 'react';
 import builtInStore from '../store/built-in-store';
-import uuid from 'uuid';
-import {dispatcher} from 'focus-core';
+import { v4 as uuid } from 'uuid';
+import { dispatcher } from 'focus-core';
 import DropzoneFocus from 'dropzone';
+import './style/index.scss';
 
 const propTypes = {
     withCredentials: PropTypes.bool,
@@ -30,46 +30,45 @@ const defaultProps = {
 class FileUploadZone extends Component {
     constructor(props) {
         super(props);
-        const state = {
+        this.state = {
             dragging: false,
-            fileId: uuid.v4()
+            fileId: uuid()
         };
-        this.state = state;
     }
 
     /**
     * Component did mount
     */
     componentDidMount() {
-        const {fileId} = this.state;
+        const { fileId } = this.state;
         this.dropzone = new DropzoneFocus(`div[data-file-upload='${fileId}']`, this.props);
         this.dropzone.on('complete', this._onFileComplete);
         this.dropzone.on('success', this._onFileSuccess);
     }
-    
+
     /**
     * Component will receive props
     */
     componentWillReceiveProps(newProps) {
         if (newProps.url) {
-            this.dropzone.options.url = newProps.url;             
+            this.dropzone.options.url = newProps.url;
         }
         if (newProps.headers) {
-            this.dropzone.options.headers = newProps.headers;             
+            this.dropzone.options.headers = newProps.headers;
         }
 
     }
 
 
     _onFileComplete = file => {
-        const {removalTimeout, store} = this.props;
+        const { removalTimeout, store } = this.props;
         setTimeout(() => {
             this.dropzone.removeFile(file);
         }, removalTimeout);
         const files = store.getFiles() || [];
         files.push(file);
         dispatcher.handleServerAction({
-            data: {files},
+            data: { files },
             type: 'update'
         });
         if (this.props.onFileComplete) {
@@ -78,7 +77,7 @@ class FileUploadZone extends Component {
     }
 
     _onFileSuccess = (file, response) => {
-        if(this.props.onFileSuccess) {
+        if (this.props.onFileSuccess) {
             this.props.onFileSuccess(file, response);
         }
     }
@@ -88,7 +87,7 @@ class FileUploadZone extends Component {
     * @return {JSX} The rendered component
     */
     render() {
-        const {fileId} = this.state;
+        const { fileId } = this.state;
         return (
             <div data-focus='file-upload'>
                 <div className='dz-clickable' data-file-upload={fileId} data-focus='file-upload-dropzone'>
