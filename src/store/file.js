@@ -5,7 +5,9 @@ import { CoreStore } from 'focus-core/store';
 * @type {focus}
 */
 const FileStore = new CoreStore({
-    files: 'files'
+    definition: {
+        files: 'files'
+    }
 });
 
 FileStore.name = 'FileStore';
