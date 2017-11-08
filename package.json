@@ -50,7 +50,7 @@
         "url": "https://github.com/KleeGroup/focus-file/issues"
     },
     "peerDependencies": {
-        "focus-core": "2.2.0-beta3",
+        "focus-core": "2.2.0",
         "react": "15.4.2",
         "react-dom": "15.4.2"
     },
