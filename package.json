@@ -1,15 +1,8 @@
 {
     "name": "focus-file",
-    "version": "0.7.4",
+    "version": "1.0.0",
     "description": "Focus file add on.",
     "main": "index.js",
-    "files": [
-        "component",
-        "example",
-        "index.js",
-        "store",
-        "dist"
-    ],
     "scripts": {
         "build": "better-npm-run babelify",
         "prepublishOnly": "npm run build",
@@ -50,21 +43,23 @@
         "url": "https://github.com/KleeGroup/focus-file/issues"
     },
     "peerDependencies": {
-        "focus-core": "2.2.0",
-        "react": "15.4.2",
-        "react-dom": "15.4.2"
+        "focus-core": "^2.3.0",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "prop-types": "^15.6.1"
     },
     "devDependencies": {
         "babel-cli": "6.26.0",
         "babel-preset-focus": "1.0.0",
         "better-npm-run": "0.1.0",
-        "eslint-config-focus": "0.6.0",
-        "focus-core": "2.2.0",
-        "react": "15.4.2",
-        "react-dom": "15.4.2"
+        "eslint-config-focus": "0.6.1",
+        "focus-core": "2.3.0-beta1",
+        "prop-types": "15.6.1",
+        "react": "16.2.0",
+        "react-dom": "16.2.0"
     },
     "dependencies": {
-        "dropzone": "4.3.0",
-        "uuid": "3.1.0"
+        "dropzone": "5.4.0",
+        "uuid": "3.2.1"
     }
 }

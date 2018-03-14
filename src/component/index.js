@@ -1,5 +1,7 @@
 //Dependencies
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import builtInStore from '../store/built-in-store';
 import { v4 as uuid } from 'uuid';
 import { dispatcher } from 'focus-core';
