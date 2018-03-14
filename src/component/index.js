@@ -1,8 +1,8 @@
 //Dependencies
-import React, { Component, PropTypes } from 'react';
-import builtInStore from '../store/built-in-store';
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import { v4 as uuid } from 'uuid';
-import { dispatcher } from 'focus-core';
 import DropzoneFocus from 'dropzone';
 import './style/index.scss';
 
@@ -13,21 +13,27 @@ const propTypes = {
     paramName: PropTypes.string,
     previewTemplate: PropTypes.string,
     removalTimeout: PropTypes.number,
-    store: PropTypes.object,
     onFileSuccess: PropTypes.func,
     onFileComplete: PropTypes.func
 };
 
 const defaultProps = {
     paramName: 'upfile',
-    removalTimeout: 1500,
-    store: builtInStore
+    removalTimeout: 1500
 };
 
 /**
-* Component use for uploading files.
-*/
+ * Component use for uploading files.
+ * 
+ * @class FileUploadZone
+ * @extends {Component}
+ */
 class FileUploadZone extends Component {
+    /**
+     * Creates an instance of FileUploadZone.
+     * @param {any} props props received
+     * @memberof FileUploadZone
+     */
     constructor(props) {
         super(props);
         this.state = {
@@ -47,8 +53,11 @@ class FileUploadZone extends Component {
     }
 
     /**
-    * Component will receive props
-    */
+     * Component will receive props.
+     * 
+     * @param {object} newProps the new props
+     * @memberof FileUploadZone
+     */
     componentWillReceiveProps(newProps) {
         if (newProps.url) {
             this.dropzone.options.url = newProps.url;
@@ -59,23 +68,29 @@ class FileUploadZone extends Component {
 
     }
 
+    /**
+     * Function called on file completion. See Dropzone doc for more informations.
+     * @param {any} file the file returned by dropzone.
+     * @memberof FileUploadZone
+     */
 
     _onFileComplete = file => {
-        const { removalTimeout, store } = this.props;
+        const { removalTimeout } = this.props;
         setTimeout(() => {
             this.dropzone.removeFile(file);
         }, removalTimeout);
-        const files = store.getFiles() || [];
-        files.push(file);
-        dispatcher.handleServerAction({
-            data: { files },
-            type: 'update'
-        });
+
         if (this.props.onFileComplete) {
             this.props.onFileComplete(file);
         }
     }
-
+    /**
+     * Function called on file success. See Dropzone doc for more informations.
+     * @param {any} file the file returned by dropzone.
+     * @param {any} response the response returned by dropzone.
+     * 
+     * @memberof FileUploadZone
+     */
     _onFileSuccess = (file, response) => {
         if (this.props.onFileSuccess) {
             this.props.onFileSuccess(file, response);
